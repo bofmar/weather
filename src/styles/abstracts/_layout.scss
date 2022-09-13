@@ -19,6 +19,13 @@ body{
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    #secondary-weather{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.8rem;
+      align-items: center;
+    }
   }
 }
 
