@@ -18,8 +18,12 @@ const imgVisibility = document.getElementById('visibility-image');
 const visibility = document.getElementById('visibility');
 
 function getCelsius(temp) {
-  console.log(temp);
   return `${(Number(temp) - 273.15).toPrecision(3)} ℃`;
+}
+
+function getFarenheit(temp) {
+  //  	℉=((K-273.15)*1.8)+32
+  return `${(((Number(temp) - 273.15) * 1.8) + 32).toPrecision(4)} ℉`;
 }
 
 function displayWeather(data, units = 'celsius') {
