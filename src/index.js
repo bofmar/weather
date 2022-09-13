@@ -14,6 +14,11 @@ const imgWind = document.getElementById('wind-image');
 const wind = document.getElementById('wind');
 const imgVisibility = document.getElementById('visibility-image');
 const visibility = document.getElementById('visibility');
+const searchBar = document.getElementById('search-bar');
+const searchButton = document.getElementById('search-button');
+const unitsButton = document.getElementById('units');
+
+let units = 'celsius';
 
 function getCelsius(temp) {
   return `${(Number(temp) - 273.15).toPrecision(3)} ℃`;
@@ -47,7 +52,7 @@ function displayWeather(data, units = 'celsius') {
   // Wind Speed
   wind.innerText = `${data.wind.speed} km/h`;
   // Visibility
-  visibility = `${(data.main.visibility / 1000).persision(1)}`;
+  visibility.innerText = `${(data.visibility / 1000).toPrecision(3)} km/h`;
 }
 
 async function getReport(city) {
@@ -55,12 +60,20 @@ async function getReport(city) {
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=eed84943e5486d8a117b70b7eaf2d745`,
       { mode: 'cors' });
     const weatherData = await response.json();
-    displayWeather(weatherData);
     console.log(weatherData);
+    displayWeather(weatherData, units);
   } catch {
     console.log('oops');
   }
 }
 
-getReport('London');
+searchButton.addEventListener('click', () => {
+  getReport(searchBar.value);
+});
 
+unitsButton.addEventListener('click', () => {
+  units = (units === 'celsius') ? 'farenheit' : 'celsius';
+  getReport(searchBar.value || 'London');
+});
+
+getReport('London');
