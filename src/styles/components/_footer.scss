@@ -1,0 +1,60 @@
+@use '../abstracts/colors' as c;
+
+footer{
+  background-color: c.$black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  button{
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  #search-panel{
+    flex-basis: 90%;
+    padding-left: 10rem;
+
+    input{
+      width: 15%;
+      border: 1px solid c.$orange;
+      border-radius: 5px;
+      padding-left: 1rem;
+      color: c.$orange;
+      background-color: c.$black;
+      margin-right: 0.5rem;
+      font-family: monospace;
+      font-weight: 500;
+    
+      &:focus{
+        outline: none;
+      }
+    }
+
+    button {
+      background-color: c.$orange;
+      border-radius: 5px;
+    }
+  }
+
+  #units{
+    color: c.$orange;
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+
+  #github > img{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 10px;
+  }
+
+  #open-weather > img{
+    height: 2rem;
+    width: 5rem;
+    margin-right: 130px;
+  }
+}

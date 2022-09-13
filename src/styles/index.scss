@@ -1,12 +1,5 @@
-@use "./abstracts/_layout";
+@use "./abstracts/layout";
 @use "./components/reset";
 @use "./components/main";
+@use "./components/footer";
 
-body {
-  background-color : teal;
-
-}
-
-footer{
-  background-color: lime;
-}

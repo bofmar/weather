@@ -5,6 +5,7 @@ import th from './assets/th.svg';
 import tl from './assets/tl.svg';
 import vis from './assets/vis.svg';
 import win from './assets/win.svg';
+import github from './assets/github.svg';
 
 const body = document.querySelector('body');
 const time = document.getElementById('time');
@@ -25,6 +26,7 @@ const visibility = document.getElementById('visibility');
 const searchBar = document.getElementById('search-bar');
 const searchButton = document.getElementById('search-button');
 const unitsButton = document.getElementById('units');
+const gitLink = document.getElementById('github');
 
 let units = 'celsius';
 
@@ -33,6 +35,10 @@ imgMin.src = tl;
 imgMax.src = th;
 imgWind.src = win;
 imgVisibility.src = vis;
+
+const gitImage = new Image();
+gitImage.src = github;
+gitLink.appendChild(gitImage);
 
 function getCelsius(temp) {
   return `${(Number(temp) - 273.15).toPrecision(3)} ℃`;
