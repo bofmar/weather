@@ -1,5 +1,10 @@
 import getTime from './time';
 import './styles/index.scss';
+import hum from './assets/hum.svg';
+import th from './assets/th.svg';
+import tl from './assets/tl.svg';
+import vis from './assets/vis.svg';
+import win from './assets/win.svg';
 
 const body = document.querySelector('body');
 const time = document.getElementById('time');
@@ -22,6 +27,12 @@ const searchButton = document.getElementById('search-button');
 const unitsButton = document.getElementById('units');
 
 let units = 'celsius';
+
+imgHumidity.src = hum;
+imgMin.src = tl;
+imgMax.src = th;
+imgWind.src = win;
+imgVisibility.src = vis;
 
 function getCelsius(temp) {
   return `${(Number(temp) - 273.15).toPrecision(3)} ℃`;
