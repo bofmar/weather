@@ -1,4 +1,4 @@
-@use '../abstracts/fonts' as f;
+@use '../abstracts/colors' as c;
 
 #page-wrap {
   background: url('/src/assets/bg.jpg');
@@ -9,10 +9,11 @@
 
 main {
 
-  color: #f59e0b;
+  color: c.$orange;
   font-family: monospace;
 
   img {
+    filter: invert(73%) sepia(78%) saturate(3420%) hue-rotate(0deg) brightness(104%) contrast(92%);
     width: 1rem;
     height: 1rem;
   }
