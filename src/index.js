@@ -1,4 +1,5 @@
 import getTime from './time';
+import './styles/index.scss';
 
 const body = document.querySelector('body');
 const time = document.getElementById('time');
