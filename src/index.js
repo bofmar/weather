@@ -1,3 +1,5 @@
+import getTime from './time';
+
 const body = document.querySelector('body');
 const time = document.getElementById('time');
 const location = document.getElementById('location');
@@ -31,6 +33,7 @@ function getFarenheit(temp) {
 
 function displayWeather(data, units = 'celsius') {
   // Weekday, Month, Day, Hours
+  time.innerText = getTime(data.dt);
   // City, Country code
   location.innerText = `${data.name}, ${data.sys.country}`
   // Temperatures 
