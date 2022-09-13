@@ -1,4 +1,17 @@
+@use '../abstracts/fonts' as f;
+
+#page-wrap {
+  background: url('/src/assets/bg.jpg');
+  background-size: 100%;
+  background-position: center;
+
+}
+
 main {
+
+  color: #f59e0b;
+  font-family: monospace;
+
   img {
     width: 1rem;
     height: 1rem;
