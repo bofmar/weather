@@ -82,7 +82,7 @@ function displayWeather(data, units = 'celsius') {
 async function getReport(city) {
   try {
     loader.className = 'active';
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=eed84943e5486d8a117b70b7eaf2d745`,
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=eed84943e5486d8a117b70b7eaf2d745`,
       { mode: 'cors' });
     const weatherData = await response.json();
     displayWeather(weatherData, units);
