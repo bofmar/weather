@@ -89,6 +89,7 @@ async function getReport(city) {
 }
 
 searchButton.addEventListener('click', () => {
+  if (!searchBar.value) return;
   getReport(searchBar.value);
 });
 
