@@ -1,4 +1,21 @@
 const body = document.querySelector('body');
+const time = document.getElementById('time');
+const location = document.getElementById('location');
+const temperature = document.getElementById('temperature');
+const description = document.getElementById('description');
+const feels = document.getElementById('feels');
+const imgChance = document.getElementById('chance-image');
+const chance = document.getElementById('chance');
+const imgHumidity = document.getElementById('humidity-image');
+const humidity = document.getElementById('humidity');
+const imgMin = document.getElementById('min-image');
+const min = document.getElementById('min');
+const imgMax = document.getElementById('max-image');
+const max = document.getElementById('max');
+const imgWind = document.getElementById('wind-image');
+const wind = document.getElementById('wind');
+const imgVisibility = document.getElementById('visibility-image');
+const visibility = document.getElementById('visibility');
 
 async function getReport(city) {
   try {
