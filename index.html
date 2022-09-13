@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Weather Now</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./main.js" defer></script>
+</head>
+
+<body>
+  <div id="page-wrap">
+    <main>
+      <div id="main-weather">
+        <p id="time"></p>
+        <p id="location"></p>
+        <p id="temperature"></p>
+        <p id="description"></p>
+        <p id="feels"></p>
+      </div>
+      <div id="secondary-weather">
+        <img id="humidity-image">
+        <p id="humidity"></p>
+        <img id="min-image">
+        <p id="min"></p>
+        <img id="max-image">
+        <p id="max"></p>
+        <img id="wind-image">
+        <p id="wind"></p>
+        <img id="visibility-image">
+        <p id="visibility"></p>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <div id="search-panel">
+      <input type="text" name="search-bar" id="search-bar" value="">
+      <button type="button" id="search-button">Search</button>
+    </div>
+    <button type="button" id="units">℃</button>
+    <a href="https://github.com/bofmar" target="_blank" id="github"></a>
+    <a href="https://openweathermap.org/" target="_blank" id="open-weather">
+      <img src="https://tomcoso.github.io/weather-app/4595304db3173f1f94c5.png" alt="">
+    </a>
+  </footer>
+  <div id="loader-wrapper" class="hidden">Loading...</div>
+</body>
+
+</html>
