@@ -30,16 +30,16 @@ function displayWeather(data, units = 'celsius') {
   // Weekday, Month, Day, Hours
   // City, Country code
   location.innerText = `${data.name}, ${data.sys.country}`
-  // Temperature
+  // Temperature, Feels like
   if (units === 'celsius') {
     temperature.innerText = getCelsius(data.main.temp);
+    feels.innerText = getCelsius(data.main.feels_like);
   } else {
     temperature.innerText = getFarenheit(data.main.temp);
+    temperature.innerText = getFarenheit(data.main.feels_like);
   }
   // Description
   description.innerText = data.weather[0].main;
-  // Feels like
-  //
   // Chance of rain
   // Humidity
   // Min Temperature
