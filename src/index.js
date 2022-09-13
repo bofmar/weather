@@ -17,11 +17,39 @@ const wind = document.getElementById('wind');
 const imgVisibility = document.getElementById('visibility-image');
 const visibility = document.getElementById('visibility');
 
+function getCelsius(temp) {
+  console.log(temp);
+  return `${(Number(temp) - 273.15).toPrecision(3)} ℃`;
+}
+
+function displayWeather(data, units = 'celsius') {
+  // Weekday, Month, Day, Hours
+  // City, Country code
+  location.innerText = `${data.name}, ${data.sys.country}`
+  // Temperature
+  if (units === 'celsius') {
+    temperature.innerText = getCelsius(data.main.temp);
+  } else {
+    temperature.innerText = getFarenheit(data.main.temp);
+  }
+  // Description
+  // Feels like
+  //
+  // Chance of rain
+  // Humidity
+  // Min Temperature
+  // Max Temperature
+  // Wind Speed
+  // Visibility
+
+}
+
 async function getReport(city) {
   try {
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=eed84943e5486d8a117b70b7eaf2d745`,
       { mode: 'cors' });
     const weatherData = await response.json();
+    displayWeather(weatherData);
     console.log(weatherData);
   } catch {
     console.log('oops');
@@ -30,15 +58,3 @@ async function getReport(city) {
 
 getReport('London');
 
-// Weekday, Month, Day, Hours
-// City, Country code
-// Temperature
-// Description
-// Feels like
-//
-// Chance of rain
-// Humidity
-// Min Temperature
-// Max Temperature
-// Wind Speed
-// Visibility
