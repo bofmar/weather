@@ -51,14 +51,14 @@ function displayWeather(data, units = 'celsius') {
   // Temperatures 
   if (units === 'celsius') {
     temperature.innerText = getCelsius(data.main.temp);
-    feels.innerText = getCelsius(data.main.feels_like);
-    min.innerText = getCelsius(data.main.temp_min);
-    max.innerText = getCelsius(data.main.temp_max);
+    feels.innerText = `Feels like ${getCelsius(data.main.feels_like)}`;
+    min.innerText = `Min ${getCelsius(data.main.temp_min)}`;
+    max.innerText = `Max ${getCelsius(data.main.temp_max)}`;
   } else {
     temperature.innerText = getFarenheit(data.main.temp);
-    temperature.innerText = getFarenheit(data.main.feels_like);
-    min.innerText = getFarenheit(data.main.temp_min);
-    max.innerText = getFarenheit(data.main.temp_max);
+    temperature.innerText = `Feels like ${getFarenheit(data.main.feels_like)}`;
+    min.innerText = `Min ${getFarenheit(data.main.temp_min)}`;
+    max.innerText = `Max ${getFarenheit(data.main.temp_max)}`;
   }
   // Description
   description.innerText = data.weather[0].main;
@@ -67,7 +67,7 @@ function displayWeather(data, units = 'celsius') {
   // Wind Speed
   wind.innerText = `${data.wind.speed} km/h`;
   // Visibility
-  visibility.innerText = `${(data.visibility / 1000).toPrecision(3)} km/h`;
+  visibility.innerText = `${(data.visibility / 1000).toPrecision(3)}km Visibility`;
 }
 
 async function getReport(city) {
