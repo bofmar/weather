@@ -40,8 +40,8 @@ function displayWeather(data, units = 'celsius') {
   }
   // Description
   description.innerText = data.weather[0].main;
-  // Chance of rain
   // Humidity
+  humidity.innerText = `${data.main.humidity}% Humidity`;
   // Min Temperature
   // Max Temperature
   // Wind Speed
