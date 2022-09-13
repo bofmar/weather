@@ -12,3 +12,16 @@ async function getReport(city) {
 }
 
 getReport('London');
+
+// Weekday, Month, Day, Hours
+// City, Country code
+// Temperature
+// Description
+// Feels like
+//
+// Chance of rain
+// Humidity
+// Min Temperature
+// Max Temperature
+// Wind Speed
+// Visibility
