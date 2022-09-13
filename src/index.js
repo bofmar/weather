@@ -27,6 +27,7 @@ const searchBar = document.getElementById('search-bar');
 const searchButton = document.getElementById('search-button');
 const unitsButton = document.getElementById('units');
 const gitLink = document.getElementById('github');
+const loader = document.getElementById('loader-wrapper')
 
 let units = 'celsius';
 
@@ -74,17 +75,20 @@ function displayWeather(data, units = 'celsius') {
   wind.innerText = `${data.wind.speed} km/h`;
   // Visibility
   visibility.innerText = `${(data.visibility / 1000).toPrecision(3)}km Visibility`;
+
+  loader.className = 'hidden';
 }
 
 async function getReport(city) {
   try {
+    loader.className = 'active';
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=eed84943e5486d8a117b70b7eaf2d745`,
       { mode: 'cors' });
     const weatherData = await response.json();
-    console.log(weatherData);
     displayWeather(weatherData, units);
-  } catch {
-    console.log('oops');
+  } catch (err) {
+    loader.className = 'active';
+    console.log(err);
   }
 }
 

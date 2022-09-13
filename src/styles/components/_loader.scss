@@ -1,0 +1,29 @@
+@use "../abstracts/colors" as c;
+
+#loader-wrapper{
+  width: 100vw;
+  height:100vh;
+
+  background-color: rgba(34, 34, 34, 0.6);
+  color: c.$orange;
+
+  text-align: center;
+  vertical-align: middle;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hidden{
+  display: none;
+}
+
+.active{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
