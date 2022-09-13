@@ -37,6 +37,7 @@ function displayWeather(data, units = 'celsius') {
     temperature.innerText = getFarenheit(data.main.temp);
   }
   // Description
+  description.innerText = data.weather[0].main;
   // Feels like
   //
   // Chance of rain
