@@ -62,7 +62,7 @@ function displayWeather(data, units = 'celsius') {
     max.innerText = `Max ${getCelsius(data.main.temp_max)}`;
   } else {
     temperature.innerText = getFarenheit(data.main.temp);
-    temperature.innerText = `Feels like ${getFarenheit(data.main.feels_like)}`;
+    feels.innerText = `Feels like ${getFarenheit(data.main.feels_like)}`;
     min.innerText = `Min ${getFarenheit(data.main.temp_min)}`;
     max.innerText = `Max ${getFarenheit(data.main.temp_max)}`;
   }
