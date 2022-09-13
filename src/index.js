@@ -73,6 +73,7 @@ searchButton.addEventListener('click', () => {
 
 unitsButton.addEventListener('click', () => {
   units = (units === 'celsius') ? 'farenheit' : 'celsius';
+  unitsButton.innerText = (units === 'celsius') ? '℃' : '℉';
   getReport(searchBar.value || 'London');
 });
 
