@@ -4,8 +4,6 @@ const location = document.getElementById('location');
 const temperature = document.getElementById('temperature');
 const description = document.getElementById('description');
 const feels = document.getElementById('feels');
-const imgChance = document.getElementById('chance-image');
-const chance = document.getElementById('chance');
 const imgHumidity = document.getElementById('humidity-image');
 const humidity = document.getElementById('humidity');
 const imgMin = document.getElementById('min-image');
@@ -30,23 +28,26 @@ function displayWeather(data, units = 'celsius') {
   // Weekday, Month, Day, Hours
   // City, Country code
   location.innerText = `${data.name}, ${data.sys.country}`
-  // Temperature, Feels like
+  // Temperatures 
   if (units === 'celsius') {
     temperature.innerText = getCelsius(data.main.temp);
     feels.innerText = getCelsius(data.main.feels_like);
+    min.innerText = getCelsius(data.main.temp_min);
+    max.innerText = getCelsius(data.main.temp_max);
   } else {
     temperature.innerText = getFarenheit(data.main.temp);
     temperature.innerText = getFarenheit(data.main.feels_like);
+    min.innerText = getFarenheit(data.main.temp_min);
+    max.innerText = getFarenheit(data.main.temp_max);
   }
   // Description
   description.innerText = data.weather[0].main;
   // Humidity
   humidity.innerText = `${data.main.humidity}% Humidity`;
-  // Min Temperature
-  // Max Temperature
   // Wind Speed
+  wind.innerText = `${data.wind.speed} km/h`;
   // Visibility
-
+  visibility = `${(data.main.visibility / 1000).persision(1)}`;
 }
 
 async function getReport(city) {
